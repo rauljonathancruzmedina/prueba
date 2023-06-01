@@ -1,5 +1,4 @@
-<?	session_start();
-
+<?
 	include("../funciones/prueba.php");
 	
 	$op=recibe_POST('op','');
@@ -102,6 +101,15 @@
 			{
 				echo $tb['nom_familia']."|".$tb['n_familia']."/";
 			}
+		break;
+		case "id":
+			$bd=$conecta->consulta("select sku from articulo");
+
+			while($tb=mysqli_fetch_array($bd))
+			{
+				echo $tb["sku"]."|";
+			}	
+
 		break;
 	}
 ?>

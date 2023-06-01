@@ -49,7 +49,6 @@ input::placeholder 	{
 			grid-column: 2 / 16;
 			grid-row: 2 / 3;
 			padding: 5px;
-			background: blue;
 		}
 
 .text-flex-left		{	justify-content: start;	}

@@ -15,7 +15,7 @@
 <body>
 	<div class="principal">
 		<div class="head text-flex-center">
-			<h1>Jonathan</h1>
+			<h1>Raúl Jonathan Cruz Medina</h1>
 		</div>
 		<div class="area-trabajo grid-at-2">
 			<form id="frm-buscar" action="index.php" method="post">				  
@@ -194,6 +194,9 @@
 					<div class="col col-2-4 btn-danger" name="btn-eliminar" id="btn-eliminar">
 						Eliminar
 					</div>
+					<divv class="col col-5-7 btn-prueba" name="btn-mostrar" id="btn-mostrar">
+						Ver id
+					</divv>
 					<div class="col col-12-14 btn-prueba" name="btn-guardar" id="btn-guardar">
 						Guardar
 					</div>
@@ -206,6 +209,8 @@
 	let chk_descont = document.querySelectorAll("chk-descont");
 	let sel_depa = document.getElementById("sel-departamento");
 	let frm_datos = document.getElementById("frm-datos");
+	let btn_mostrar = document.getElementById("btn-mostrar");
+
 	if (document.getElementById("txt-sku-i").value != "") 
 	{	
   		document.getElementById("div-sku").style.display = "none";
@@ -265,6 +270,19 @@
 						alerta(txt);
 					});
 		}		
+	}
+
+	btn_mostrar.onclick = () => {
+		const data = new FormData();
+		data.append('op', 'id');
+		envioAjax(data, "./ajax/actualizar.php")
+			.then((txt)=>{
+				d=txt.split("|");
+				for(var i =0; i < d.length-1; i++)
+				{
+					alerta("ksu existentes: "+d[i]);
+				}
+			});
 	}
 
   	btn_eliminar.onclick = () => 
