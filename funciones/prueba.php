@@ -9,7 +9,6 @@
 		var $conexion;
 		private $tbc;
 		
-		//function __construct($db="factorvm_factorv",$server="localhost",$user="factorvm_root", $contra="factorv_2022") //servidor
 		function __construct($db="prueba",$server="localhost",$user="root", $contra="") //local
 		{
 			$this->servidor=$server;
